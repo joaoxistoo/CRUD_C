@@ -61,99 +61,244 @@ void Visualizar_inscricaoDisciplina();
 void Atualizar_inscricaoDisciplina();
 void Excluir_inscricaoDisciplina();
 
-void menu(){
+void menu_principal();
+void menu_TipoCurso();
+void menu_Aluno();
+void menu_Disciplina();
+void menu_InscicaoDisciplina();
 
-     int opcao = 0;
-          do{
-               printf("\n\n Menu: \n\n");
-               printf("\n Opcao .1 Inserir_TipoCurso ");
-               printf("\n Opcao .2 Inserir_Aluno ");
-               printf("\n Opcao .3 Inserir_Disciplina ");
-               printf("\n Opcao .4 Inserir_inscricaoDisciplina ");
 
-               printf("\n\n Opcao .5 Visualizar_TipoCurso ");
-               printf("\n Opcao .6 Visualizar_Aluno ");
-               printf("\n Opcao .7 Visualizar_Disciplina ");
-               printf("\n Opcao .8 Visualizar_inscricaoDisciplina");
-
-               printf("\n\n Opcao .9 Atualizar_TipoCurso ");
-               printf("\n Opcao .10 Atualizar_Aluno ");
-               printf("\n Opcao .11 Atualizar_Disciplina ");
-               printf("\n Opcao .12 Atualizar_inscricaoDisciplina ");
-
-               printf("\n\n Opcao .13 Excluir_TipoCurso ");
-               printf("\n Opcao .14 Excluir_Aluno ");
-               printf("\n Opcao .15 Excluir_Disciplina ");
-               printf("\n Opcao .16 Excluir_inscricaoDisciplina ");
-
-               printf("\n\n Opcao .0 Sair do programa ");
-
-               printf("\n\n Escolha uma das Opcoes: ");
-               scanf("%d", &opcao);
-
-               switch(opcao){
-
-                    case 1: Inserir_TipoCurso();
-                         break;
-
-                    case 2: Inserir_Aluno();
-                         break;
-
-                    case 3: Inserir_Disciplina();
-                         break;
-
-                    case 4: Inserir_inscricaoDisciplina();
-                         break;
-
-                    case 5: Visualizar_TipoCurso();
-                         break;
-
-                    case 6: Visualizar_Aluno();
-                         break;
-
-                    case 7: Visualizar_Disciplina();
-                         break;
-
-                    case 8: Visualizar_inscricaoDisciplina();
-                         break;
-
-                    case 9: Atualizar_TipoCurso();
-                         break;
-
-                    case 10: Atualizar_Aluno();
-                         break;
-
-                    case 11: Atualizar_Disciplina();
-                         break;
-
-                     case 12: Atualizar_inscricaoDisciplina();
-                         break;
-
-                    case 13: Excluir_TipoCurso();
-                         break;
-
-                    case 14: Excluir_Aluno();
-                         break;
-
-                  case 15: Excluir_Disciplina();
-                         break; 
-
-                  case 16: Excluir_inscricaoDisciplina();
-                         break;    
+void menu_principal(){
+    
+        int opcao_1 = 0;
+        
+        
+            do {
+                
+                printf(" ========== Menu Principal ==========\n");
+            
+                printf("\n Opcao .1 - TipoCurso ");
+                printf("\n Opcoa .2 - Aluno ");
+                printf("\n Opcao .3 - Dispclina ");
+                printf("\n Opcao .4 - InscricaoDisciplina ");
+                printf("\n Opcao .0 - Sair do Menu ");
+                printf("\n\n");
+                printf("\n ====================================\n");
+                
+                scanf("%d", &opcao_1);
+                
+                switch(opcao_1){
+                
+                case 1: menu_TipoCurso();
+                    break;
                     
-                    case 0: printf("\n Adeus! \n");
+                case 2: menu_Aluno();
+                    break;
+                
+                case 3: menu_Disciplina();
+                    break;
+                
+                case 4: menu_InscicaoDisciplina();
+                    break;
+                
+                case 0: printf("\n Encerrando Programa!! Até Logo!! \n");
                          break;
                     
-                    default: printf("\n Opcao invalida, Tente Novamente! :) ");
-                        break;
-                    }
+                default: printf("\n Opcao invalida, Tente Novamente! :) ");
+                        break; 
+            
+                }
+            }
+                while(opcao_1);
+            }   
+            
+void menu_TipoCurso(){
+    
+    int opcao_2 = 0;
+    
+            do{
+                
+            
+                printf("   ========== Menu TipoCurso =========\n");
+                
+                printf("\n Opcao .1 Inserir_TipoCurso ");
+                printf("\n Opcao .2 Visualizar_TipoCurso ");
+                printf("\n Opcao .3 Atualizar_TipoCurso ");
+                printf("\n Opcao .4 Excluir_TipoCurso ");
+                printf("\n Opcao .0 - Sair do Menu ");
+                scanf("\n Digite a opcao desejada: ");
+                printf("\n\n");
+                printf(" ===================================\n");
+                
+                scanf("%d", &opcao_2);
 
-     
-               } 
-               
-          while(opcao);    
+
+                switch(opcao_2){
+                
+                case 1: Inserir_TipoCurso();
+                         break;
+
+                case 2: Visualizar_TipoCurso();
+                         break;
+                
+                case 3: Atualizar_TipoCurso();
+                         break;
+                
+                case 4: Excluir_TipoCurso();
+                         break;
+                
+                case 0: printf("\n Adeus! \n");
+                         break;
+                    
+                default: printf("\n Opcao invalida, Tente Novamente! :) ");
+                        break;          
+            }    
+}   
+
+    while(opcao_2);
+}    
+    
+    
+void menu_Aluno(){
+    
+    int opcao_3 = 0;
+    
+            do{
+                
+            
+                printf("   ========== Menu Aluno =========\n");
+                
+                printf("\n Opcao .1 Inserir_Aluno ");
+                printf("\n Opcao .2 Visualizar_Aluno ");
+                printf("\n Opcao .3 Atualizar_Aluno ");
+                printf("\n Opcao .4 Excluir_Aluno ");
+                printf("\n Opcao .0 - Sair do Menu ");
+                printf("\n\n");
+                printf(" ===================================\n");
+                
+                scanf("%d", &opcao_3);
+
+
+                switch(opcao_3){
+                
+                case 1: Inserir_Aluno();
+                         break;
+
+                case 2: Visualizar_Aluno();
+                         break;
+                
+                case 3: Atualizar_Aluno();
+                         break;
+                
+                case 4: Excluir_Aluno();
+                         break;
+                         
+                case 0: printf("\n Adeus! \n");
+                         break;
+                    
+                default: printf("\n Opcao invalida, Tente Novamente! :) ");
+                        break; 
+                        
+            }    
+}   
+
+    while(opcao_3);
+}
+    
+    
+void menu_Disciplina(){
+    
+    int opcao_4 = 0;
+    
+            do{
+                
+            
+                printf("   ========== Menu Disciplina =========\n");
+                
+                printf("\n Opcao .1 Inserir_Disciplina ");
+                printf("\n Opcao .2 Visualizar_Disciplina ");
+                printf("\n Opcao .3 Atualizar_Disciplina ");
+                printf("\n Opcao .4 Excluir_Disciplina ");
+                printf("\n Opcao .0 - Sair do Menu ");
+                printf("\n\n");
+                printf(" ===================================\n");
+                
+                scanf("%d", &opcao_4);
+
+
+                switch(opcao_4){
+                
+                case 1: Inserir_Aluno();
+                         break;
+
+                case 2: Visualizar_Aluno();
+                         break;
+                
+                case 3: Atualizar_Aluno();
+                         break;
+                
+                case 4: Excluir_Aluno();
+                         break;
+                
+                case 0: printf("\n Adeus! \n");
+                         break;
+                    
+                default: printf("\n Opcao invalida, Tente Novamente! :) ");
+                        break;         
+            }    
+}   
+
+    while(opcao_4);
 
 }
+    
+void menu_InscicaoDisciplina(){
+    
+    int opcao_5 = 0;
+    
+            do{
+                
+            
+                printf("   ========== Menu InscricaoDisciplina =========\n");
+                
+                printf("\n Opcao .1 Inserir_InscricaoDisciplina ");
+                printf("\n Opcao .2 Visualizar_InscricaoDisciplina ");
+                printf("\n Opcao .3 Atualizar_InscricaoDisciplina ");
+                printf("\n Opcao .4 Excluir_InscricaoDisciplina ");
+                printf("\n Opcao .0 - Sair do Menu ");
+                printf("\n\n");
+                printf(" =============================================\n");
+                
+                scanf("%d", &opcao_5);
+
+
+                switch(opcao_5){
+                
+                case 1: Inserir_inscricaoDisciplina();
+                         break;
+
+                case 2: Visualizar_inscricaoDisciplina();
+                         break;
+                
+                case 3: Atualizar_inscricaoDisciplina();
+                         break;
+                
+                case 4: Excluir_inscricaoDisciplina();
+                         break;
+                
+                case 0: printf("\n Adeus! \n");
+                         break;
+                    
+                default: printf("\n Opcao invalida, Tente Novamente! :) ");
+                        break;         
+                         
+            }    
+}   
+
+    while(opcao_5);
+    
+}
+
 
 //    --------------------------------------- FUNÇÃO TIPO TIPOCURSO -------------------------------------------
 
@@ -722,7 +867,8 @@ void Excluir_inscricaoDisciplina() {
 
 int main(){ 
 
-     menu();
+     menu_principal();
 
 }
+
 
