@@ -36,7 +36,7 @@
 
         int matricula;
         int codigoDisciplina;
-        int dataInscricao;
+        char dataInscricao[20];
         
 } inscricaoDisciplina;
 
@@ -102,8 +102,8 @@ void menu(){
                     case 3: Inserir_Disciplina();
                          break;
 
-//                    case 4: Inserir_inscricaoDisciplina();
-//                         break;
+                    case 4: Inserir_inscricaoDisciplina();
+                         break;
 
                     case 5: Visualizar_TipoCurso();
                          break;
@@ -114,8 +114,8 @@ void menu(){
                     case 7: Visualizar_Disciplina();
                          break;
 
-//                    case 8: Visualizar_inscricaoDisciplina();
-//                         break;
+                    case 8: Visualizar_inscricaoDisciplina();
+                         break;
 
                     case 9: Atualizar_TipoCurso();
                          break;
@@ -126,8 +126,8 @@ void menu(){
                     case 11: Atualizar_Disciplina();
                          break;
 
-//                     case 12: Atualizar_inscricaoDisciplina();
-//                         break;
+                     case 12: Atualizar_inscricaoDisciplina();
+                         break;
 
                     case 13: Excluir_TipoCurso();
                          break;
@@ -135,16 +135,16 @@ void menu(){
                     case 14: Excluir_Aluno();
                          break;
 
-//                  case 15: Excluir_Disciplina();
-//                         break; 
+                  case 15: Excluir_Disciplina();
+                         break; 
 
-//                  case 16: Excluir_inscricaoDisciplina();
-//                         break;    
+                  case 16: Excluir_inscricaoDisciplina();
+                         break;    
                     
                     case 0: printf("\n Adeus! \n");
                          break;
                     
-                    default: printf("\n Opcao inválida, Tente Novamente! :) ");
+                    default: printf("\n Opcao invalida, Tente Novamente! :) ");
                         break;
                     }
 
@@ -162,7 +162,7 @@ int tipoCursoCount = 0;
 
 void Inserir_TipoCurso() {
     if (tipoCursoCount < SIZE) {
-        printf("\n\n Adicionar Código TipoCurso: ");
+        printf("\n\n Adicionar Codigo TipoCurso: ");
         scanf("%d", &tipoCursoArray[tipoCursoCount].codigoTipoCurso);
 
         printf("\n\n Adicionar Nome TipoCurso: ");
@@ -176,7 +176,7 @@ void Inserir_TipoCurso() {
     } 
     else 
     {
-        printf("\n O limite de registros foi atingido. Não é possível adicionar mais Tipo de Curso. \n");
+        printf("\n O limite de registros foi atingido. Nao e possivel adicionar mais Tipo de Curso. \n");
     }
 
 }
@@ -192,7 +192,7 @@ void Visualizar_TipoCurso() {
 
         for (int i = 0; i < tipoCursoCount; i++) {
 
-            printf("Código TipoCurso: %d\n", tipoCursoArray[i].codigoTipoCurso);
+            printf("Codigo TipoCurso: %d\n", tipoCursoArray[i].codigoTipoCurso);
             printf("Nome TipoCurso: %s\n", tipoCursoArray[i].nome);
             printf("Turno TipoCurso: %s\n", tipoCursoArray[i].turno);
             printf("\n\n\n");
@@ -204,7 +204,7 @@ void Atualizar_TipoCurso() {
 
     if (tipoCursoCount == 0) {
 
-        printf("\nNenhum Tipo de Curso foi cadastrado ainda. Não é possível atualizar.\n");
+        printf("\nNenhum Tipo de Curso foi cadastrado ainda. Nao e possivel atualizar.\n");
         return;
            
     } 
@@ -212,7 +212,7 @@ void Atualizar_TipoCurso() {
     {
         int codigoAtualizacao;
 
-        printf("\nInforme o código do Tipo de Curso que deseja atualizar: ");
+        printf("\nInforme o codigo do Tipo de Curso que deseja atualizar: ");
         scanf("%d", &codigoAtualizacao);
         
         int encontrado = 0;
@@ -234,7 +234,7 @@ void Atualizar_TipoCurso() {
         }
 
         if (!encontrado) {
-            printf("\nTipo de Curso com código %d não encontrado.\n", codigoAtualizacao);
+            printf("\nTipo de Curso com codigo %d nao encontrado.\n", codigoAtualizacao);
         }
     }
 }
@@ -243,13 +243,13 @@ void Excluir_TipoCurso() {
     
     if (tipoCursoCount == 0) {
         
-        printf("\nNenhum Tipo de Curso foi cadastrado ainda. Não é possível excluir.\n");
+        printf("\nNenhum Tipo de Curso foi cadastrado ainda. Nao e possivel excluir.\n");
     } 
     else 
     {
         int codigoExclusao;
         
-        printf("\nInforme o código do Tipo de Curso que deseja excluir: ");
+        printf("\nInforme o codigo do Tipo de Curso que deseja excluir: ");
         scanf("%d", &codigoExclusao);
         
         int encontrado = 0;
@@ -272,11 +272,11 @@ void Excluir_TipoCurso() {
             
             tipoCursoCount--;
             
-            printf("\nTipo de Curso excluído com sucesso!\n");
+            printf("\nTipo de Curso excluido com sucesso!\n");
         } 
         else 
         {
-            printf("\nTipo de Curso com código %d não encontrado.\n", codigoExclusao);
+            printf("\nTipo de Curso com codigo %d nao encontrado.\n", codigoExclusao);
         }
     }
 }
@@ -316,7 +316,7 @@ void Inserir_Aluno() {
         } 
         else 
         {
-            printf("\nO limite de registros foi atingido. Não é possível adicionar mais Tipo de Curso.\n");
+            printf("\nO limite de registros foi atingido. Nao e possível adicionar mais Tipo de Curso.\n");
         }
 
     }
@@ -347,7 +347,7 @@ void Atualizar_Aluno() {
 
         if (AlunoCount == 0) {
 
-            printf("\n Nenhum Aluno foi cadastrado ainda. Não é possível atualizar.\n");
+            printf("\n Nenhum Aluno foi cadastrado ainda. Nao e possivel atualizar.\n");
             return;
         } 
         else 
@@ -389,7 +389,7 @@ void Atualizar_Aluno() {
             }
 
             if (!encontrado) {
-                printf("\nAluno com Matricula %d não encontrado.\n", matriculaAtualizacao);
+                printf("\nAluno com Matricula %d nao encontrado.\n", matriculaAtualizacao);
             }
         }
     }
@@ -398,7 +398,7 @@ void Excluir_Aluno() {
     
     if (AlunoCount == 0) {
         
-        printf("\nNenhum Aluno foi cadastrado ainda. Não é possível excluir.\n");
+        printf("\nNenhum Aluno foi cadastrado ainda. Nao e possivel excluir.\n");
     } 
     else 
     {
@@ -427,11 +427,11 @@ void Excluir_Aluno() {
             
             AlunoCount--;
             
-            printf("\nAluno excluído com sucesso!\n");
+            printf("\nAluno excluido com sucesso!\n");
         } 
         else 
         {
-            printf("\nAluno com Matricula %d não encontrada.\n", matriculaExclusao);
+            printf("\nAluno com Matricula %d nao encontrada.\n", matriculaExclusao);
         }
     }
 }
@@ -466,7 +466,7 @@ void Inserir_Disciplina() {
         } 
         else 
         {
-            printf("\nO limite de registros foi atingido. Não é possível adicionar mais Disciplinas.\n");
+            printf("\nO limite de registros foi atingido. Nao e possivel adicionar mais Disciplinas.\n");
         }
 
     }
@@ -498,7 +498,7 @@ void Atualizar_Disciplina() {
 
         if (DisciplinaCount == 0) {
 
-            printf("\n Nenhuma Disciplina foi cadastrado ainda. Não é possível atualizar.\n");
+            printf("\n Nenhuma Disciplina foi cadastrado ainda. Nao e possivel atualizar.\n");
             return;
         } 
         else 
@@ -534,16 +534,195 @@ void Atualizar_Disciplina() {
             }
 
             if (!encontrado) {
-                printf("\nDisciplina com CodigoDisciplina: %d não encontrado.\n", DisciplinaAtualizacao);
+                printf("\nDisciplina com CodigoDisciplina: %d nao encontrado.\n", DisciplinaAtualizacao);
             }
         }
     }
 
+void Excluir_Disciplina() {
+    
+    if (DisciplinaCount == 0) {
+        
+        printf("\nNenhuma Disciplina foi cadastrado ainda. Nao e posivel excluir.\n");
+    } 
+    else 
+    {
+        int DisciplinaExclusao;
+        
+        printf("\nInforme o CodigoDisciplina deseja excluir: ");
+        scanf("%d", &DisciplinaExclusao);
+        
+        int encontrado = 0;
+        int indiceExclusao = -1;
+
+        for (int i = 0; i < DisciplinaCount; i++) {
+            
+            if (DisciplinaArray[i].codigoDisciplina == DisciplinaExclusao) {
+                encontrado = 1;
+                indiceExclusao = i;
+                break;
+            }
+        }
+
+        if (encontrado) {
+            
+            for (int i = indiceExclusao; i < DisciplinaCount - 1; i++) {
+                DisciplinaArray[i] = DisciplinaArray[i + 1];
+            }
+            
+            DisciplinaCount--;
+            
+            printf("\nDisciplina excluida com sucesso!\n");
+        } 
+        else 
+        {
+            printf("\nDisciplina com CodigoDisciplina %d nao encontrado.\n", DisciplinaExclusao);
+        }
+    }
+}
+
+// -------------------------------------------- FUNÇÃO DISCIPLINA ---------------------------------------------
+
+// -------------------------------------------- FUNÇÃO INSCRIÇÃODISCIPLINA ---------------------------------------------
+
+inscricaoDisciplina inscricaoDisciplinaArray[SIZE];
+
+int inscricaoDisciplinaCount = 0;
+
+void Inserir_inscricaoDisciplina() {
+
+        if (inscricaoDisciplinaCount < SIZE) {
+            
+            printf("\n\n Insira a Matricula da inscricaoDisciplina: ");
+            scanf("%d", &inscricaoDisciplinaArray[inscricaoDisciplinaCount].matricula);
+
+            printf("\n\n Insira o CodigoDisciplina da InscricaoDisciplina: ");
+            scanf("%d", &inscricaoDisciplinaArray[inscricaoDisciplinaCount].codigoDisciplina);
+
+            printf("\n\n Insira a DataInscricao da inscricaoDisciplina: ");
+            scanf("%s", inscricaoDisciplinaArray[inscricaoDisciplinaCount].dataInscricao);
+
+            
+            inscricaoDisciplinaCount++;
+            
+            printf("\n\n InscricaoDisciplina inserida com sucesso!\n\n");
+        } 
+        else 
+        {
+            printf("\nO limite de registros foi atingido. Nao e possível adicionar mais InscricaoDisciplinas.\n");
+        }
+
+    }
+
+ void Visualizar_inscricaoDisciplina() {
+
+        if (inscricaoDisciplinaCount == 0) {
+
+            printf("\nNenhuma InscricaoDisciplina foi cadastrada ainda.\n");
+        } 
+        else 
+        {
+            printf("\n\n******* Lista de Disciplinas: *******\n\n");
+
+            for (int i = 0; i < inscricaoDisciplinaCount; i++) {
+
+                printf("Matricula InscricaoDisciplina: %d\n", inscricaoDisciplinaArray[i].matricula);
+                printf("CodigoDisciplina InscricaoDisciplina : %d\n", inscricaoDisciplinaArray[i].codigoDisciplina);
+                printf("DataInscricao InscricaoMatricula: %s\n", inscricaoDisciplinaArray[i].dataInscricao);                
+                printf("\n\n\n");
+            }
+        }
+    }
+
+void Atualizar_inscricaoDisciplina() {
+
+        int inscricaoDisciplinaAtualizacao;
+
+        if (inscricaoDisciplinaCount == 0) {
+
+            printf("\n Nenhuma InscricaoDisciplina foi cadastrado ainda. Nao e possivel atualizar.\n");
+            return;
+        } 
+        else 
+        {
+
+            printf("\n Informe a Matricula que deseja atualizar: ");
+            scanf("%d", &inscricaoDisciplinaAtualizacao);
+            
+            int encontrado = 0;
+
+            for (int i = 0; i < inscricaoDisciplinaCount; i++) {
 
 
+                if (inscricaoDisciplinaArray[i].matricula == inscricaoDisciplinaAtualizacao) {
+                
+                    printf("\nDigite a nova Matricula para InscricaoDisciplina: ");
+                    scanf("%d", &inscricaoDisciplinaArray[i].matricula);
+
+                    printf("\nDigite o novo CodigoDisciplina para a InscricaoDisciplina: ");
+                    scanf("%d", &inscricaoDisciplinaArray[i].codigoDisciplina);
+
+                    printf("\nDigite o DataInscricao para a InscricaoDsiciplina: ");
+                    scanf("%s", inscricaoDisciplinaArray[i].dataInscricao);
+
+                    printf("\n Disciplina atualizado com sucesso!\n");
+
+                    encontrado = 1;
+                    break;
+                }
+            }
+
+            if (!encontrado) {
+                printf("\nDisciplina com Matricula:  %d nao encontrado.\n", inscricaoDisciplinaAtualizacao);
+            }
+        }
+    }
+
+void Excluir_inscricaoDisciplina() {
+    
+    if (inscricaoDisciplinaCount == 0) {
+        
+        printf("\nNenhuma InscricaoDisciplina foi cadastrado ainda. Nao e posiível excluir.\n");
+    } 
+    else 
+    {
+        int inscricaoDisciplinaExclusao;
+        
+        printf("\nInforme a Matricula que deseja excluir: ");
+        scanf("%d", &inscricaoDisciplinaExclusao);
+        
+        int encontrado = 0;
+        int indiceExclusao = -1;
+
+        for (int i = 0; i < inscricaoDisciplinaCount; i++) {
+            
+            if (inscricaoDisciplinaArray[i].matricula == inscricaoDisciplinaExclusao) {
+                encontrado = 1;
+                indiceExclusao = i;
+                break;
+            }
+        }
+
+        if (encontrado) {
+            
+            for (int i = indiceExclusao; i < inscricaoDisciplinaCount - 1; i++) {
+                inscricaoDisciplinaArray[i] = inscricaoDisciplinaArray[i + 1];
+            }
+            
+            inscricaoDisciplinaCount--;
+            
+            printf("\nIscricaoDisciplina excluida com sucesso!\n");
+        } 
+        else 
+        {
+            printf("\nInscricaoDisciplina com Matricrula %d nao encontrado.\n", inscricaoDisciplinaExclusao);
+        }
+    }
+}
 
 int main(){ 
 
      menu();
 
 }
+
